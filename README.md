@@ -25,7 +25,7 @@ Open http://localhost:3000. To validate a production build, run `npm run build`;
 
 ## Content and production setup
 
-This is a Houston-based website concept. The JUAN. brand is starter content to replace with the actual business details. Supplied photographs are illustrative and have not been verified as depicting the named neighborhoods. The photo collection does not represent available inventory.
+This is a Houston-based website concept. The site is branded for Lanza Enterprises LLC. Supplied photographs are illustrative and have not been verified as depicting the named neighborhoods. The photo collection does not represent available inventory.
 
 All 13 supplied JPEG photographs (`IMG_1184.JPEG` through `IMG_1196.JPEG`) are copied from the parent directory into `public/images` and used in the photo collection. Their original files remain unchanged in the parent directory. The website serves the copies locally from `/images/`.
 
@@ -33,7 +33,7 @@ Contact inquiries are **not sent**. The contact form saves a draft in browser lo
 
 Confirm permission to use the supplied imagery. Add the actual agent name, licensing and brokerage details, required disclosures, and contact information. Have `src/lib/legal.ts` reviewed and completed for the actual business, jurisdiction, hosting provider, messaging provider, and other integrations before launch. Policies describe the present implementation, not legal compliance with all jurisdictions.
 
-Google Fonts load from an external provider; photographs are served by the website host. No analytics or marketing trackers are installed. Inquiry drafts use `juan-contact-draft` and remain in the visitor's browser. SMS submissions do not use local storage. Visitors to an earlier version can clear any old site data through their browser settings.
+Google Fonts load from an external provider; photographs are served by the website host. No analytics or marketing trackers are installed. Inquiry drafts use `lanza-contact-draft` and remain in the visitor's browser. SMS submissions do not use local storage. Visitors to an earlier version can clear any old site data through their browser settings.
 
 ## SMS opt-in setup
 

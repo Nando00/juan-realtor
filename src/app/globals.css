@@ -241,6 +241,17 @@ h2 em {
   flex-shrink: 0;
   gap: 15px;
 }
+.brand-wordmark {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.brand-business {
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 2.1px;
+  line-height: 1.2;
+}
 .brand-name {
   font-size: 35px;
   font-weight: 700;

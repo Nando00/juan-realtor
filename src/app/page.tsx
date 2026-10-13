@@ -14,7 +14,7 @@ type ContactDraft = {
   interest: string;
   message: string;
 };
-const draftKey = "juan-contact-draft";
+const draftKey = "lanza-contact-draft";
 const neighborhoods = [
   {
     name: "Houston Heights",
@@ -41,16 +41,19 @@ function Brand({ light = false }: { light?: boolean }) {
     <a
       href="#home"
       className={`brand ${light ? "brand-light" : ""}`}
-      aria-label="Juan Real Estate home"
+      aria-label="Lanza Enterprises LLC home"
     >
-      <span className="brand-name">
-        JUAN<span>.</span>
+      <span className="brand-wordmark">
+        <span className="brand-name">
+          LANZA<span>.</span>
+        </span>
+        <span className="brand-business">ENTERPRISES LLC</span>
       </span>
       <span className="brand-rule" />
       <span className="brand-caption">
-        REAL ESTATE
+        HOUSTON,
         <br />
-        HOUSTON, TEXAS
+        TEXAS
       </span>
     </a>
   );
@@ -124,13 +127,13 @@ function ContactForm({ subject }: { subject: string }) {
   }
 
   function downloadDraft() {
-    const content = `JUAN. REAL ESTATE — INQUIRY DRAFT\n\nName: ${draft.name}\nEmail: ${draft.email}\nInterest: ${draft.interest}\n\n${draft.message}\n\nThis draft has not been sent to an agent.`;
+    const content = `LANZA ENTERPRISES LLC — INQUIRY DRAFT\n\nName: ${draft.name}\nEmail: ${draft.email}\nInterest: ${draft.interest}\n\n${draft.message}\n\nThis draft has not been sent to an agent.`;
     const url = URL.createObjectURL(
       new Blob([content], { type: "text/plain;charset=utf-8" }),
     );
     const link = document.createElement("a");
     link.href = url;
-    link.download = "juan-inquiry.txt";
+    link.download = "lanza-inquiry.txt";
     link.click();
     URL.revokeObjectURL(url);
   }
@@ -287,16 +290,16 @@ export default function Home() {
             className={`main-nav ${menuOpen ? "is-open" : ""}`}
           >
             <button onClick={() => openContact("buying a home")}>
-              Buy with Juan
+              Buy with us
             </button>
             <button onClick={() => openContact("selling my home")}>
-              Sell with Juan
+              Sell with us
             </button>
             <a href="#neighborhoods" onClick={() => setMenuOpen(false)}>
               Neighborhoods
             </a>
             <a href="#about" onClick={() => setMenuOpen(false)}>
-              Meet Juan
+              About us
             </a>
           </nav>
           <div className="header-actions">
@@ -463,8 +466,8 @@ export default function Home() {
                 <em>A little more personal.</em>
               </h2>
               <p className="about-lead">
-                Hey, I’m Juan. I believe finding a home should feel as good as
-                coming home.
+                At Lanza Enterprises LLC, we believe finding a home should feel
+                as good as coming home.
               </p>
               <p>
                 It starts with listening. To what matters to you, where you see
@@ -477,7 +480,7 @@ export default function Home() {
                 corner.
               </p>
               <div className="about-signoff">
-                <span className="signature">Juan.</span>
+                <span className="signature">Lanza.</span>
                 <span>
                   YOUR NEXT CHAPTER
                   <br />
@@ -562,7 +565,7 @@ export default function Home() {
             {[
               {
                 n: "01",
-                title: "Tell me your story.",
+                title: "Tell us your story.",
                 text: "The dream, the timeline, the non-negotiables. We start with what matters to you.",
               },
               {
@@ -604,7 +607,7 @@ export default function Home() {
               Let’s talk about home <Icon name="arrow-up" size={21} />
             </button>
             <span className="banner-mark" aria-hidden="true">
-              J.
+              L.
             </span>
           </div>
         </section>
@@ -620,13 +623,13 @@ export default function Home() {
             </div>
             <nav aria-label="Footer navigation">
               <button onClick={() => openContact("buying a home")}>
-                Buy with Juan
+                Buy with us
               </button>
               <button onClick={() => openContact("selling my home")}>
-                Sell with Juan
+                Sell with us
               </button>
               <a href="#neighborhoods">Neighborhoods</a>
-              <a href="#about">Meet Juan</a>
+              <a href="#about">About us</a>
             </nav>
             <a className="footer-top-link" href="#home">
               BACK TO TOP <Icon name="arrow-up" size={17} />

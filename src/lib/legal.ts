@@ -23,7 +23,7 @@ export const legalContent: Record<LegalPageId, LegalDocument> = {
         heading: "What stays in your browser",
         paragraphs: [
           "If you save a contact draft, the details you enter are stored in local storage on that browser and device so you can return to your draft later. The SMS sign-up form is separate and does not save your mobile number or consent in browser local storage.",
-          "Saving a contact draft does not send a message to Juan, request a callback, or book an appointment. This version has no connected contact-inquiry service, user accounts, or payment processing. Please do not enter sensitive financial, identity, or other confidential information.",
+          "Saving a contact draft does not send a message to Lanza Enterprises LLC, request a callback, or book an appointment. This version has no connected contact-inquiry service, user accounts, or payment processing. Please do not enter sensitive financial, identity, or other confidential information.",
         ],
       },
       {
