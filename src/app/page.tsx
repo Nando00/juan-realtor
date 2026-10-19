@@ -1,19 +1,11 @@
 "use client";
 
-import { useEffect, useState, type FormEvent } from "react";
+import { useState } from "react";
 import { Icon } from "@/components/icons";
 import { Modal } from "@/components/modal";
 import { PhotoGallery } from "@/components/photo-gallery";
 import { homePhotos } from "@/lib/photos";
-import { legalContent, type LegalPageId } from "@/lib/legal";
 
-type ContactDraft = {
-  name: string;
-  email: string;
-  interest: string;
-  message: string;
-};
-const draftKey = "lanza-contact-draft";
 const neighborhoods = [
   {
     name: "Houston Heights",
@@ -58,206 +50,59 @@ function Brand({ light = false }: { light?: boolean }) {
   );
 }
 
-function ContactForm({ subject }: { subject: string }) {
-  const initialInterest =
-    subject === "selling my home" ? "Selling a home" : "Buying a home";
-  const [draft, setDraft] = useState<ContactDraft>({
-    name: "",
-    email: "",
-    interest: initialInterest,
-    message: subject ? `I'd love to learn more about ${subject}.` : "",
-  });
-  const [saved, setSaved] = useState(false);
-  const [hasDraft, setHasDraft] = useState(false);
-  const [error, setError] = useState("");
-  useEffect(() => {
-    try {
-      const raw = localStorage.getItem(draftKey);
-      if (!raw) return;
-      const value: unknown = JSON.parse(raw);
-      if (
-        typeof value === "object" &&
-        value !== null &&
-        ["name", "email", "interest", "message"].every(
-          (key) => typeof (value as Record<string, unknown>)[key] === "string",
-        )
-      ) {
-        const stored = value as ContactDraft;
-        setDraft({
-          ...stored,
-          interest: subject ? initialInterest : stored.interest,
-          message: subject
-            ? `I'd love to learn more about ${subject}.`
-            : stored.message,
-        });
-        setHasDraft(true);
-      }
-    } catch {
-      /* The form remains available when storage is disabled. */
-    }
-  }, [subject, initialInterest]);
+function BusinessContactLinks() {
+  return (
+    <address className="business-contact-links">
+      <a className="contact-detail-row" href="mailto:juan@lanzacorporation.com">
+        <span className="contact-detail-icon">
+          <Icon name="mail" size={19} />
+        </span>
+        <span className="contact-detail-text">
+          <span className="contact-detail-label">Email us</span>
+          <span className="contact-detail-value">
+            juan@lanzacorporation.com
+          </span>
+        </span>
+        <Icon name="arrow-up" size={16} className="contact-detail-arrow" />
+      </a>
+      <a className="contact-detail-row" href="tel:+18323790358">
+        <span className="contact-detail-icon">
+          <Icon name="phone" size={19} />
+        </span>
+        <span className="contact-detail-text">
+          <span className="contact-detail-label">Give us a call</span>
+          <span className="contact-detail-value">(832) 379-0358</span>
+        </span>
+        <Icon name="arrow-up" size={16} className="contact-detail-arrow" />
+      </a>
+      <div className="contact-detail-row">
+        <span className="contact-detail-icon">
+          <Icon name="pin" size={19} />
+        </span>
+        <span className="contact-detail-text">
+          <span className="contact-detail-label">Business address</span>
+          <span className="contact-detail-value">
+            14106 Long Glen Dr
+            <span className="contact-detail-city">Houston, TX 77039</span>
+          </span>
+        </span>
+      </div>
+    </address>
+  );
+}
 
-  function submit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    try {
-      localStorage.setItem(draftKey, JSON.stringify(draft));
-      setSaved(true);
-      setHasDraft(true);
-      setError("");
-    } catch {
-      setError(
-        "Your browser could not save this draft. Enable site storage and try again.",
-      );
-    }
-  }
-
-  function clearDraft() {
-    try {
-      localStorage.removeItem(draftKey);
-      setDraft({ name: "", email: "", interest: "Buying a home", message: "" });
-      setHasDraft(false);
-      setSaved(false);
-      setError("");
-    } catch {
-      setError(
-        "Your browser could not clear this draft. Try clearing this site's data in browser settings.",
-      );
-    }
-  }
-
-  function downloadDraft() {
-    const content = `LANZA ENTERPRISES LLC — INQUIRY DRAFT\n\nName: ${draft.name}\nEmail: ${draft.email}\nInterest: ${draft.interest}\n\n${draft.message}\n\nThis draft has not been sent to an agent.`;
-    const url = URL.createObjectURL(
-      new Blob([content], { type: "text/plain;charset=utf-8" }),
-    );
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = "lanza-inquiry.txt";
-    link.click();
-    URL.revokeObjectURL(url);
-  }
-
+function ContactDetails() {
   return (
     <div className="contact-dialog">
-      <span className="eyebrow red">GOOD THINGS START WITH A CONVERSATION</span>
+      <span className="eyebrow red">LANZA ENTERPRISES LLC</span>
       <h2>
-        {saved ? (
-          <>
-            One step closer
-            <br />
-            to your <em>next chapter.</em>
-          </>
-        ) : (
-          <>
-            Let’s make
-            <br />
-            your next move.
-          </>
-        )}
+        Let’s talk about <em>home.</em>
       </h2>
-      {saved ? (
-        <div className="draft-success" role="status">
-          <span className="success-icon">
-            <Icon name="check" size={26} />
-          </span>
-          <h3>Your inquiry is saved.</h3>
-          <p>
-            Your draft is saved on this device. This preview does not send it to
-            an agent. Download a copy to keep your plans handy.
-          </p>
-          <button className="button button-red" onClick={downloadDraft}>
-            Download inquiry <Icon name="arrow" />
-          </button>
-          <button className="text-button" onClick={() => setSaved(false)}>
-            Edit my inquiry
-          </button>
-          <button className="text-button subtle" onClick={clearDraft}>
-            Delete saved draft
-          </button>
-        </div>
-      ) : (
-        <>
-          <p className="dialog-intro">
-            Big plans, small questions, or just exploring. There’s a place to
-            start.
-          </p>
-          <form onSubmit={submit} className="contact-form">
-            <div className="form-row">
-              <label>
-                Your name
-                <input
-                  required
-                  maxLength={100}
-                  autoComplete="name"
-                  placeholder="Alex Morgan"
-                  value={draft.name}
-                  onChange={(e) => setDraft({ ...draft, name: e.target.value })}
-                />
-              </label>
-              <label>
-                Email address
-                <input
-                  required
-                  type="email"
-                  maxLength={254}
-                  autoComplete="email"
-                  placeholder="alex@example.com"
-                  value={draft.email}
-                  onChange={(e) =>
-                    setDraft({ ...draft, email: e.target.value })
-                  }
-                />
-              </label>
-            </div>
-            <label>
-              I’m interested in
-              <select
-                value={draft.interest}
-                onChange={(e) =>
-                  setDraft({ ...draft, interest: e.target.value })
-                }
-              >
-                <option>Buying a home</option>
-                <option>Selling a home</option>
-                <option>Just exploring</option>
-              </select>
-            </label>
-            <label>
-              A little about your plans
-              <textarea
-                rows={4}
-                maxLength={2000}
-                placeholder="Your dream neighborhood, your timeline, your must-haves…"
-                value={draft.message}
-                onChange={(e) =>
-                  setDraft({ ...draft, message: e.target.value })
-                }
-              />
-            </label>
-            <p className="form-note">
-              <Icon name="home" size={16} />
-              Preview mode: your inquiry stays in this browser and is not sent.
-            </p>
-            {error && (
-              <p role="alert" className="form-error">
-                {error}
-              </p>
-            )}
-            <button className="button button-red" type="submit">
-              Save my inquiry <Icon name="arrow-up" />
-            </button>
-            {hasDraft && (
-              <button
-                type="button"
-                className="text-button subtle"
-                onClick={clearDraft}
-              >
-                Delete saved draft
-              </button>
-            )}
-          </form>
-        </>
-      )}
+      <p className="dialog-intro">
+        Call or email us about your next move, or use the chat widget to get in
+        touch.
+      </p>
+      <BusinessContactLinks />
     </div>
   );
 }
@@ -265,15 +110,11 @@ function ContactForm({ subject }: { subject: string }) {
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [galleryOpen, setGalleryOpen] = useState(false);
-  const [legal, setLegal] = useState<LegalPageId | null>(null);
-  const [contact, setContact] = useState<{ subject: string } | null>(null);
-  function openContact(subject = "") {
+  const [contactOpen, setContactOpen] = useState(false);
+  function openContact() {
     setMenuOpen(false);
     setGalleryOpen(false);
-    setContact({ subject });
-  }
-  function exploreNeighborhood(name: string) {
-    openContact(`finding a home in ${name}, Houston`);
+    setContactOpen(true);
   }
 
   return (
@@ -288,12 +129,8 @@ export default function Home() {
             aria-label="Main navigation"
             className={`main-nav ${menuOpen ? "is-open" : ""}`}
           >
-            <button onClick={() => openContact("buying a home")}>
-              Buy with us
-            </button>
-            <button onClick={() => openContact("selling my home")}>
-              Sell with us
-            </button>
+            <button onClick={() => openContact()}>Buy with us</button>
+            <button onClick={() => openContact()}>Sell with us</button>
             <a href="#neighborhoods" onClick={() => setMenuOpen(false)}>
               Neighborhoods
             </a>
@@ -523,7 +360,7 @@ export default function Home() {
               <button
                 className="neighborhood-card"
                 key={neighborhood.name}
-                onClick={() => exploreNeighborhood(neighborhood.name)}
+                onClick={() => openContact()}
                 aria-label={`Explore homes in ${neighborhood.name}`}
               >
                 <img
@@ -599,12 +436,13 @@ export default function Home() {
               </h2>
               <p>A fresh start begins with a simple conversation.</p>
             </div>
-            <button
-              className="button button-ivory"
-              onClick={() => openContact()}
-            >
-              Let’s talk about home <Icon name="arrow-up" size={21} />
-            </button>
+            <div className="contact-banner-details">
+              <div className="contact-card-heading">
+                <h3>Get in touch.</h3>
+                <span>LANZA ENTERPRISES LLC</span>
+              </div>
+              <BusinessContactLinks />
+            </div>
             <span className="banner-mark" aria-hidden="true">
               L.
             </span>
@@ -615,33 +453,30 @@ export default function Home() {
       <footer className="site-footer">
         <div className="container">
           <div className="footer-top">
-            <div>
+            <div className="footer-brand-column">
               <Brand light />
               <p>Houston roots. New beginnings.</p>
+              <a className="footer-top-link" href="#home">
+                BACK TO TOP <Icon name="arrow-up" size={17} />
+              </a>
+            </div>
+            <div className="footer-contact-column">
+              <h3 className="footer-column-label">LET’S CONNECT</h3>
+              <BusinessContactLinks />
             </div>
             <nav aria-label="Footer navigation">
-              <button onClick={() => openContact("buying a home")}>
-                Buy with us
-              </button>
-              <button onClick={() => openContact("selling my home")}>
-                Sell with us
-              </button>
+              <h3 className="footer-column-label">EXPLORE</h3>
+              <button onClick={() => openContact()}>Buy with us</button>
+              <button onClick={() => openContact()}>Sell with us</button>
               <a href="#neighborhoods">Neighborhoods</a>
               <a href="#about">About us</a>
             </nav>
-            <a className="footer-top-link" href="#home">
-              BACK TO TOP <Icon name="arrow-up" size={17} />
-            </a>
           </div>
           <div className="footer-bottom">
             <span>© {new Date().getFullYear()} Lanza Enterprises LLC</span>
             <div className="footer-legal">
-              <button onClick={() => setLegal("privacy")}>
-                Privacy Policy
-              </button>
-              <button onClick={() => setLegal("terms")}>
-                Terms & Conditions
-              </button>
+              <a href="/privacy-policy">Privacy Policy</a>
+              <a href="/terms-and-conditions">Terms & Conditions</a>
             </div>
             <span className="footer-note">
               <Icon name="home" size={15} />
@@ -665,55 +500,18 @@ export default function Home() {
               A little inspiration for what comes next. Tell us what feels like
               home to you.
             </p>
-            <button
-              className="button button-red"
-              onClick={() => openContact("finding my next home")}
-            >
+            <button className="button button-red" onClick={() => openContact()}>
               Let’s talk <Icon name="arrow-up" size={18} />
             </button>
           </div>
         </Modal>
       )}
-      {contact && (
+      {contactOpen && (
         <Modal
           title="Let's talk about your next move"
-          onClose={() => setContact(null)}
+          onClose={() => setContactOpen(false)}
         >
-          <ContactForm subject={contact.subject} />
-        </Modal>
-      )}
-      {legal && (
-        <Modal
-          title={legalContent[legal].title}
-          onClose={() => setLegal(null)}
-          className="legal-modal"
-        >
-          <article className="legal-content">
-            <span className="eyebrow red">LANZA ENTERPRISES LLC</span>
-            <h2>{legalContent[legal].title}</h2>
-            <p className="legal-date">
-              Last updated: {legalContent[legal].updated}
-            </p>
-            <p className="legal-intro">{legalContent[legal].intro}</p>
-            {legalContent[legal].sections.map((section) => (
-              <section key={section.heading}>
-                <h3>{section.heading}</h3>
-                {section.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-              </section>
-            ))}
-            <button
-              className="section-link"
-              onClick={() =>
-                setLegal(legal === "privacy" ? "terms" : "privacy")
-              }
-            >
-              Read our{" "}
-              {legal === "privacy" ? "Terms & Conditions" : "Privacy Policy"}
-              <Icon name="arrow" size={17} />
-            </button>
-          </article>
+          <ContactDetails />
         </Modal>
       )}
     </>

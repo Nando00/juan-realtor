@@ -14,117 +14,119 @@ export type LegalDocument = {
 
 export const legalContent: Record<LegalPageId, LegalDocument> = {
   privacy: {
-    title: "Privacy policy",
+    title: "Privacy Policy",
     updated: "October 18, 2026",
     intro:
-      "Your next move should start with clarity. This policy describes how the Lanza Enterprises LLC website concept handles information in its current form.",
+      "Your next move should start with clarity. This policy describes how the Lanza Enterprises LLC website collects, uses, and protects your information.",
     sections: [
       {
-        heading: "What stays in your browser",
+        heading: "SMS & Mobile Information Privacy",
         paragraphs: [
-          "If you save a contact draft, the details you enter are stored in local storage on that browser and device so you can return to your draft later. The embedded LeadConnector chat and SMS opt-in widget is separate from these local drafts.",
-          "Saving a contact draft does not send a message to Lanza Enterprises LLC, request a callback, or book an appointment. The separate LeadConnector widget can submit information to our messaging provider. This site does not provide user accounts or payment processing. Please do not enter sensitive financial, identity, or other confidential information.",
+          "No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. Information sharing to subcontractors in support services, such as customer service, is permitted. All other use case categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.",
+        ],
+      },
+      {
+        heading: "How to contact us",
+        paragraphs: [
+          "Contact Lanza Enterprises LLC at juan@lanzacorporation.com or (832) 379-0358 for business inquiries, messaging support, or privacy questions. Our business address is 14106 Long Glen Dr, Houston, TX 77039.",
+          "The LeadConnector chat widget is the only form on this website. The email and phone links open your email or calling application; using those links does not provide SMS marketing consent. This site does not provide user accounts or payment processing.",
         ],
       },
       {
         heading: "LeadConnector chat and SMS opt-in",
         paragraphs: [
           "This site embeds a LeadConnector widget for Lanza Enterprises LLC. Information you submit through the widget, such as your name, phone number, message, consent selections, and any additional fields shown in the widget, is processed by LeadConnector to handle your inquiry and requested communications. Review the consent wording displayed in the widget before submitting.",
-          "The widget loads resources from LeadConnector and may process technical information, such as your IP address and browser details, and use browser storage as part of its operation. The provider manages widget submissions and consent records; these are not stored as local contact drafts by this application.",
+          "The widget loads resources from LeadConnector and may process technical information, such as your IP address and browser details, and use browser storage as part of its operation. The provider manages widget submissions and consent records.",
         ],
       },
       {
         heading: "Your choices and retention",
         paragraphs: [
-          "Browser storage can remain until you remove it or your browser clears it. You can delete a contact draft using its controls, or clear this site’s stored information through your browser’s site-data settings. Clearing site data affects only that browser; it does not remove copies you downloaded or information submitted to a connected SMS service.",
-          "Local storage is not a private account or a secure document vault. Anyone with access to your browser profile may be able to see information saved there. Storage restrictions or private browsing may prevent the save features from working.",
-          "For an active SMS program, reply STOP to a message to withdraw consent or HELP for assistance. Withdrawing consent stops future marketing texts; a record of your consent and withdrawal may remain as needed to honor your choice and meet applicable recordkeeping obligations. LeadConnector account settings and the business’s messaging practices determine retention and support handling; clearing this site’s browser data does not delete records held by the messaging provider.",
+          "You can clear this site’s browser storage through your browser’s site-data settings. Clearing browser data does not delete messages or consent records held by LeadConnector.",
+          "For questions about information submitted through the widget, email juan@lanzacorporation.com or call (832) 379-0358.",
+          "For our SMS program, reply STOP to a message to withdraw consent or HELP for assistance. Withdrawing consent stops future marketing texts; a record of your consent and withdrawal may remain as needed to honor your choice and meet applicable recordkeeping obligations.",
         ],
       },
       {
         heading: "Images, fonts, and technical requests",
         paragraphs: [
-          "Photographs are served by this website. Your browser requests these files from the website host, which may receive your IP address, browser information, and request details as part of delivering the site.",
+          "Photographs and static assets are served by this website. Your browser requests these files from our website host, which may receive your IP address, browser information, and request details as part of delivering and securing the site.",
           "Typefaces load from Google Fonts. Your browser makes requests to Google's font services, which may receive technical information such as your IP address, browser details, and the requested resource. Google's privacy practices are described at https://policies.google.com/privacy.",
-          "A service that hosts this website may also process technical request information to deliver and protect the site. Its specific logging and retention practices depend on the deployment and must be reflected in this policy before a public business launch.",
         ],
       },
       {
         heading: "Tracking and sharing",
         paragraphs: [
-          "The site code does not add separate analytics or advertising trackers. Embedded third-party services, including LeadConnector and Google Fonts, make their own technical requests and may process information to provide their services. Saving a local contact draft does not submit it to LeadConnector.",
-          "Mobile numbers, SMS opt-in information, and consent records are not sold or shared with third parties for their own marketing or promotional purposes. We may share this information with service providers solely to operate the requested messaging program on our behalf, including maintaining consent and opt-out records.",
+          "We do not sell, rent, or trade your personal information to third parties or affiliates. Embedded third-party services, including LeadConnector and Google Fonts, make technical requests necessary to provide their services.",
         ],
       },
       {
-        heading: "About this notice",
+        heading: "Updates to this policy",
         paragraphs: [
-          "Lanza Enterprises LLC is presented here as a website concept with illustrative content. This notice describes the current implementation and is not a statement of compliance with every privacy law. Before using the site for an operating business, the operator must identify the business and privacy contact, confirm hosting and messaging practices, and update the notice for actual services and integrations.",
-          "Changes to these practices should be reflected here with a revised date and any additional notice required by applicable law. No working privacy-request channel is connected in this concept.",
+          "We may update this Privacy Policy from time to time to reflect changes in our services or applicable laws. Any updates will be posted on this page with a revised date. You can send privacy questions to juan@lanzacorporation.com or call (832) 379-0358.",
         ],
       },
     ],
   },
   terms: {
-    title: "Terms & conditions",
+    title: "Terms & Conditions",
     updated: "October 18, 2026",
     intro:
-      "These terms explain the intended use and limitations of the Lanza Enterprises LLC website concept. Please read them alongside the privacy policy.",
+      "These terms explain the intended use and limitations of the Lanza Enterprises LLC website (https://www.lanzacorporation.com). Please read them alongside our Privacy Policy.",
     sections: [
       {
         heading: "A place to explore",
         paragraphs: [
-          "This site is an informational real estate website concept featuring Houston neighborhood information and illustrative photography. It does not present property inventory, make an offer to sell or lease, or represent that a pictured home is available.",
-          "Photographs are a visual collection and have not been verified as depicting the named neighborhoods. Neighborhood descriptions are general introductions. Confirm current property, location, and transaction information with the relevant parties before making a real estate decision.",
+          "This site provides general real estate and neighborhood information for the Greater Houston area. Website content is for informational purposes only and does not constitute a binding offer to sell, lease, or finance any specific property. Confirm current property, location, and transaction information directly with Lanza Enterprises LLC before making a real estate decision.",
         ],
       },
       {
         heading: "No representation or appointment",
         paragraphs: [
-          "Browsing, preparing a contact draft, or requesting SMS updates does not create an agency, brokerage, client, fiduciary, or other professional relationship. Any such relationship requires the appropriate separate agreement and disclosures.",
-          "The contact-draft dialog saves a draft in your browser only. The separate LeadConnector widget submits information to the messaging provider. Neither preparing a draft nor submitting a widget message reserves a home, schedules a tour, or commits anyone to a transaction.",
+          "Browsing this website, contacting us, or requesting SMS updates does not automatically create an agency, brokerage, client, or fiduciary relationship. Any formal representation requires a separate written agreement and statutory disclosures.",
+          "The LeadConnector widget submits inquiry information to our team. Calling, emailing, or submitting a widget message does not itself reserve a property, guarantee an appointment time, or commit any party to a transaction.",
         ],
       },
       {
-        heading: "Optional SMS updates",
+        heading: "SMS Messaging Terms of Service",
         paragraphs: [
-          "Selecting the SMS consent checkbox and submitting the LeadConnector widget authorizes Lanza Enterprises LLC to send recurring automated marketing texts about Houston real estate, neighborhood updates, and real estate services to the mobile number you provide. Consent is not a condition of purchasing a property or service. Only enroll a number you own or are authorized to use.",
-          "Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for assistance. You may receive a final confirmation after opting out. Delivery depends on your carrier and network and is not guaranteed.",
-          "Chat and SMS opt-in are provided through the embedded LeadConnector widget. Its availability, submission handling, and messaging behavior depend on the provider and the business’s account configuration. SMS information is handled as described in the privacy policy.",
+          "1. Program Description: By opting into Lanza Enterprises LLC SMS services through our website chat widget, you consent to receive text messages regarding real estate inquiries, property updates, appointment reminders, and promotional offers from Lanza Enterprises LLC.",
+          '2. Opt-Out Instructions: You can cancel the SMS service at any time. Just text "STOP" to the phone number. After you send the SMS message "STOP" to us, we will send you an SMS message to confirm that you have been unsubscribed. After this, you will no longer receive SMS messages from us. If you want to join again, just sign up as you did the first time and we will start sending SMS messages to you again.',
+          "3. Help & Support: If you are experiencing issues with the messaging program you can reply with the keyword HELP for more assistance, or you can get help directly at juan@lanzacorporation.com or (832) 379-0358.",
+          "4. Carrier Liability & Rates: Carriers are not liable for delayed or undelivered messages. As always, message and data rates may apply for any messages sent to you from us and to us from you. Message frequency varies. If you have any questions about your text plan or data plan, it is best to contact your wireless provider.",
+          "5. Privacy Policy: If you have any questions regarding privacy, please read our Privacy Policy at https://www.lanzacorporation.com/privacy-policy.",
+          "Consent is not a condition of purchasing a property or service. Only enroll a number you own or are authorized to use. The LeadConnector chat widget is the only form on this website.",
         ],
       },
       {
         heading: "Independent professional advice",
         paragraphs: [
-          "The content is general information, not legal, financial, mortgage, tax, or other advice tailored to your circumstances. Consult appropriately qualified professionals before making a real estate decision. No transaction outcome, return, financing approval, or property value is guaranteed.",
+          "Website content is general information and is not legal, financial, mortgage, tax, or investment advice tailored to your circumstances. Consult appropriately qualified professionals before making a real estate decision. No transaction outcome, financing approval, or property value is guaranteed.",
         ],
       },
       {
         heading: "Use the site responsibly",
         paragraphs: [
-          "You may use the site for lawful personal exploration. Do not attempt to disrupt the site, bypass security, introduce harmful code, impersonate someone, misuse another person’s information, or use its content to misrepresent an actual property or business relationship.",
-          "Only enter information you are entitled to use. This concept is not intended to receive confidential documents or sensitive personal information.",
+          "You may use the site for lawful personal and business inquiries. Do not attempt to disrupt the site, bypass security, introduce harmful code, impersonate someone, or misuse another person’s information. Only enter contact information you are authorized to use.",
         ],
       },
       {
         heading: "Content and third-party services",
         paragraphs: [
-          "The design, text, images, and other materials may be protected by intellectual property rights belonging to their respective owners or licensors. Access to this site does not transfer those rights. Any reuse must be permitted by the applicable license or rights holder.",
-          "Third-party links and services, including LeadConnector and Google Fonts, are subject to their own terms and privacy practices. Their inclusion does not establish an endorsement or guarantee their availability or accuracy.",
+          "The design, text, images, and materials on this site are protected by applicable intellectual property laws. Third-party services used on this site, including LeadConnector and Google Fonts, are subject to their own terms and privacy practices.",
         ],
       },
       {
         heading: "Availability and limitations",
         paragraphs: [
-          "The site is provided as an illustrative concept and may contain errors, interruptions, or incomplete information. Saved information may be lost when browser storage is cleared or unavailable. The site is not promised to be continuously available or suitable for a particular purpose.",
-          "To the extent permitted by applicable law, the operator is not responsible for loss resulting from reliance on sample content or interruption of this demonstration. Nothing in these terms excludes rights, remedies, or liability that cannot lawfully be excluded or limited.",
+          'We strive to keep the website accurate and accessible, but the site is provided on an "as-is" basis without warranties of continuous availability. To the extent permitted by applicable law, Lanza Enterprises LLC is not liable for damages arising from temporary interruptions or reliance on general informational content.',
         ],
       },
       {
-        heading: "Changes and business launch",
+        heading: "Changes and contact information",
         paragraphs: [
-          "The site and these terms may be updated as features change. The date above identifies the current version. Material changes should be communicated as required by applicable law.",
-          "Before this concept is used for an operating business, these terms must be reviewed and updated with the actual operator, contact details, services, applicable disclosures, and terms appropriate to that business and its location.",
+          "We may update these Terms & Conditions as our services evolve. The date at the top of this page identifies the current version.",
+          "For questions about these terms or messaging support, contact Lanza Enterprises LLC at juan@lanzacorporation.com or (832) 379-0358. Our business address is 14106 Long Glen Dr, Houston, TX 77039.",
         ],
       },
     ],
