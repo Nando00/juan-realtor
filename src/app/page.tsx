@@ -4,7 +4,6 @@ import { useEffect, useState, type FormEvent } from "react";
 import { Icon } from "@/components/icons";
 import { Modal } from "@/components/modal";
 import { PhotoGallery } from "@/components/photo-gallery";
-import { SmsOptIn } from "@/components/sms-opt-in";
 import { homePhotos } from "@/lib/photos";
 import { legalContent, type LegalPageId } from "@/lib/legal";
 
@@ -611,7 +610,6 @@ export default function Home() {
             </span>
           </div>
         </section>
-        <SmsOptIn onOpenLegal={setLegal} />
       </main>
 
       <footer className="site-footer">

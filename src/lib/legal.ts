@@ -15,22 +15,22 @@ export type LegalDocument = {
 export const legalContent: Record<LegalPageId, LegalDocument> = {
   privacy: {
     title: "Privacy policy",
-    updated: "October 13, 2026",
+    updated: "October 18, 2026",
     intro:
       "Your next move should start with clarity. This policy describes how the Lanza Enterprises LLC website concept handles information in its current form.",
     sections: [
       {
         heading: "What stays in your browser",
         paragraphs: [
-          "If you save a contact draft, the details you enter are stored in local storage on that browser and device so you can return to your draft later. The SMS sign-up form is separate and does not save your mobile number or consent in browser local storage.",
-          "Saving a contact draft does not send a message to Lanza Enterprises LLC, request a callback, or book an appointment. This version has no connected contact-inquiry service, user accounts, or payment processing. Please do not enter sensitive financial, identity, or other confidential information.",
+          "If you save a contact draft, the details you enter are stored in local storage on that browser and device so you can return to your draft later. The embedded LeadConnector chat and SMS opt-in widget is separate from these local drafts.",
+          "Saving a contact draft does not send a message to Lanza Enterprises LLC, request a callback, or book an appointment. The separate LeadConnector widget can submit information to our messaging provider. This site does not provide user accounts or payment processing. Please do not enter sensitive financial, identity, or other confidential information.",
         ],
       },
       {
-        heading: "SMS sign-up information",
+        heading: "LeadConnector chat and SMS opt-in",
         paragraphs: [
-          "When SMS sign-up is enabled, submitting the form with your express consent sends your mobile number, optional name, and consent record to our server and connected messaging service. The record includes the consent wording and version, submission time, source, channel, and purpose. We use this information to manage your requested Lanza Enterprises LLC marketing texts and document your choice.",
-          "When SMS sign-up is not connected, the form is a preview and does not create a subscription. We do not store SMS sign-up information in your browser. Once enrollment is enabled, connected service providers process and retain the submitted information on our behalf.",
+          "This site embeds a LeadConnector widget for Lanza Enterprises LLC. Information you submit through the widget, such as your name, phone number, message, consent selections, and any additional fields shown in the widget, is processed by LeadConnector to handle your inquiry and requested communications. Review the consent wording displayed in the widget before submitting.",
+          "The widget loads resources from LeadConnector and may process technical information, such as your IP address and browser details, and use browser storage as part of its operation. The provider manages widget submissions and consent records; these are not stored as local contact drafts by this application.",
         ],
       },
       {
@@ -38,7 +38,7 @@ export const legalContent: Record<LegalPageId, LegalDocument> = {
         paragraphs: [
           "Browser storage can remain until you remove it or your browser clears it. You can delete a contact draft using its controls, or clear this site’s stored information through your browser’s site-data settings. Clearing site data affects only that browser; it does not remove copies you downloaded or information submitted to a connected SMS service.",
           "Local storage is not a private account or a secure document vault. Anyone with access to your browser profile may be able to see information saved there. Storage restrictions or private browsing may prevent the save features from working.",
-          "For an active SMS program, reply STOP to a message to withdraw consent or HELP for assistance. Withdrawing consent stops future marketing texts; a record of your consent and withdrawal may remain as needed to honor your choice and meet applicable recordkeeping obligations. Specific service providers, retention periods, and a working privacy contact must be identified before enrollment is enabled for a live business.",
+          "For an active SMS program, reply STOP to a message to withdraw consent or HELP for assistance. Withdrawing consent stops future marketing texts; a record of your consent and withdrawal may remain as needed to honor your choice and meet applicable recordkeeping obligations. LeadConnector account settings and the business’s messaging practices determine retention and support handling; clearing this site’s browser data does not delete records held by the messaging provider.",
         ],
       },
       {
@@ -52,7 +52,7 @@ export const legalContent: Record<LegalPageId, LegalDocument> = {
       {
         heading: "Tracking and sharing",
         paragraphs: [
-          "This version does not include analytics, advertising trackers, or marketing cookies. The application does not sell personal information or transmit your saved contact draft to a real estate business. Technical requests for site resources and Google Fonts are separate from those saved details.",
+          "The site code does not add separate analytics or advertising trackers. Embedded third-party services, including LeadConnector and Google Fonts, make their own technical requests and may process information to provide their services. Saving a local contact draft does not submit it to LeadConnector.",
           "Mobile numbers, SMS opt-in information, and consent records are not sold or shared with third parties for their own marketing or promotional purposes. We may share this information with service providers solely to operate the requested messaging program on our behalf, including maintaining consent and opt-out records.",
         ],
       },
@@ -67,7 +67,7 @@ export const legalContent: Record<LegalPageId, LegalDocument> = {
   },
   terms: {
     title: "Terms & conditions",
-    updated: "October 13, 2026",
+    updated: "October 18, 2026",
     intro:
       "These terms explain the intended use and limitations of the Lanza Enterprises LLC website concept. Please read them alongside the privacy policy.",
     sections: [
@@ -82,15 +82,15 @@ export const legalContent: Record<LegalPageId, LegalDocument> = {
         heading: "No representation or appointment",
         paragraphs: [
           "Browsing, preparing a contact draft, or requesting SMS updates does not create an agency, brokerage, client, fiduciary, or other professional relationship. Any such relationship requires the appropriate separate agreement and disclosures.",
-          "The contact experience currently saves a draft in your browser only. It does not deliver an inquiry, reserve a home, schedule a tour, or commit anyone to a transaction. No reply or service is promised through this demonstration.",
+          "The contact-draft dialog saves a draft in your browser only. The separate LeadConnector widget submits information to the messaging provider. Neither preparing a draft nor submitting a widget message reserves a home, schedules a tour, or commits anyone to a transaction.",
         ],
       },
       {
         heading: "Optional SMS updates",
         paragraphs: [
-          "When enrollment is available, selecting the separate SMS consent checkbox and submitting the form authorizes Lanza Enterprises LLC to send recurring automated marketing texts about Houston real estate, neighborhood updates, and real estate services to the mobile number you provide. Consent is not a condition of purchasing a property or service. Only enroll a number you own or are authorized to use.",
+          "Selecting the SMS consent checkbox and submitting the LeadConnector widget authorizes Lanza Enterprises LLC to send recurring automated marketing texts about Houston real estate, neighborhood updates, and real estate services to the mobile number you provide. Consent is not a condition of purchasing a property or service. Only enroll a number you own or are authorized to use.",
           "Message frequency varies. Message and data rates may apply. Reply STOP to unsubscribe or HELP for assistance. You may receive a final confirmation after opting out. Delivery depends on your carrier and network and is not guaranteed.",
-          "The preview form does not enroll you or send texts while the SMS service is unavailable. An active program requires a connected messaging service with working consent records, unsubscribe handling, and support. SMS information is handled as described in the privacy policy.",
+          "Chat and SMS opt-in are provided through the embedded LeadConnector widget. Its availability, submission handling, and messaging behavior depend on the provider and the business’s account configuration. SMS information is handled as described in the privacy policy.",
         ],
       },
       {
@@ -110,7 +110,7 @@ export const legalContent: Record<LegalPageId, LegalDocument> = {
         heading: "Content and third-party services",
         paragraphs: [
           "The design, text, images, and other materials may be protected by intellectual property rights belonging to their respective owners or licensors. Access to this site does not transfer those rights. Any reuse must be permitted by the applicable license or rights holder.",
-          "Third-party links and services, including Google Fonts, are subject to their own terms and privacy practices. Their inclusion does not establish an endorsement or guarantee their availability or accuracy.",
+          "Third-party links and services, including LeadConnector and Google Fonts, are subject to their own terms and privacy practices. Their inclusion does not establish an endorsement or guarantee their availability or accuracy.",
         ],
       },
       {
