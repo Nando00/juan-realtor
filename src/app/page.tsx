@@ -75,7 +75,7 @@ function BusinessContactLinks() {
         </span>
         <Icon name="arrow-up" size={16} className="contact-detail-arrow" />
       </a>
-      <div className="contact-detail-row">
+      <div className="contact-detail-row contact-detail-row--address">
         <span className="contact-detail-icon">
           <Icon name="pin" size={19} />
         </span>
