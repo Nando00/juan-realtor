@@ -3,16 +3,9 @@ import { legalContent, type LegalPageId } from "@/lib/legal";
 function LinkedText({ text }: { text: string }) {
   return text
     .split(
-      /(https:\/\/www\.lanzacorporation\.com\/privacy-policy|juan@lanzacorporation\.com|\(832\) 379-0358|Our business address is 14106 Long Glen Dr, Houston, TX 77039\.)/g,
+      /(https:\/\/www\.lanzacorporation\.com\/privacy-policy|juan@lanzacorporation\.com|\(832\) 379-0358)/g,
     )
     .map((part, index) => {
-      if (part.startsWith("Our business address is ")) {
-        return (
-          <span key={index} className="business-address--hidden">
-            {part}
-          </span>
-        );
-      }
       const href = part.startsWith("https://")
         ? part
         : part === "juan@lanzacorporation.com"

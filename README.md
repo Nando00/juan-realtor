@@ -29,7 +29,7 @@ This is a Houston-based website concept. The site is branded for Lanza Enterpris
 
 All 13 supplied JPEG photographs (`IMG_1184.JPEG` through `IMG_1196.JPEG`) are copied from the parent directory into `public/images` and used in the photo collection. Their original files remain unchanged in the parent directory. The website serves the copies locally from `/images/`.
 
-Business contact: **juan@lanzacorporation.com** · **(832) 379-0358** · **14106 Long Glen Dr, Houston, TX 77039**. Contact actions show these direct links. The LeadConnector widget is the only form on the site; there are no separate contact, lead, appointment, or SMS opt-in forms.
+Business contact: **juan@lanzacorporation.com** · **(832) 379-0358**. Contact actions show these direct links. The LeadConnector widget is the only form on the site; there are no separate contact, lead, appointment, or SMS opt-in forms. Do not publish a street address in page content, hidden markup, metadata, structured data, or static assets.
 
 Confirm permission to use the supplied imagery. Add the actual agent name, licensing and brokerage details, required disclosures, and contact information. Have `src/lib/legal.ts` reviewed and completed for the actual business, jurisdiction, hosting provider, messaging provider, and other integrations before launch. Policies describe the present implementation, not legal compliance with all jurisdictions.
 

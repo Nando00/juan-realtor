@@ -28,7 +28,7 @@ export const legalContent: Record<LegalPageId, LegalDocument> = {
       {
         heading: "How to contact us",
         paragraphs: [
-          "Contact Lanza Enterprises LLC at juan@lanzacorporation.com or (832) 379-0358 for business inquiries, messaging support, or privacy questions. Our business address is 14106 Long Glen Dr, Houston, TX 77039.",
+          "Contact Lanza Enterprises LLC at juan@lanzacorporation.com or (832) 379-0358 for business inquiries, messaging support, or privacy questions.",
           "The LeadConnector chat widget is the only form on this website. The email and phone links open your email or calling application; using those links does not provide SMS marketing consent. This site does not provide user accounts or payment processing.",
         ],
       },
@@ -126,7 +126,7 @@ export const legalContent: Record<LegalPageId, LegalDocument> = {
         heading: "Changes and contact information",
         paragraphs: [
           "We may update these Terms & Conditions as our services evolve. The date at the top of this page identifies the current version.",
-          "For questions about these terms or messaging support, contact Lanza Enterprises LLC at juan@lanzacorporation.com or (832) 379-0358. Our business address is 14106 Long Glen Dr, Houston, TX 77039.",
+          "For questions about these terms or messaging support, contact Lanza Enterprises LLC at juan@lanzacorporation.com or (832) 379-0358.",
         ],
       },
     ],

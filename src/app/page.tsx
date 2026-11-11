@@ -75,18 +75,6 @@ function BusinessContactLinks() {
         </span>
         <Icon name="arrow-up" size={16} className="contact-detail-arrow" />
       </a>
-      <div className="contact-detail-row contact-detail-row--address">
-        <span className="contact-detail-icon">
-          <Icon name="pin" size={19} />
-        </span>
-        <span className="contact-detail-text">
-          <span className="contact-detail-label">Business address</span>
-          <span className="contact-detail-value">
-            14106 Long Glen Dr
-            <span className="contact-detail-city">Houston, TX 77039</span>
-          </span>
-        </span>
-      </div>
     </address>
   );
 }
