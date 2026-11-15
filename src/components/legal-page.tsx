@@ -28,11 +28,11 @@ export function LegalPage({ page }: { page: LegalPageId }) {
   return (
     <main className="legal-page">
       <nav className="legal-page-nav" aria-label="Legal page navigation">
-        <a href="/">Lanza Enterprises LLC</a>
+        <a href="/">Lanza Realty Group</a>
         <a href="/">Back to home ↗</a>
       </nav>
       <article className="legal-content">
-        <span className="eyebrow red">LANZA ENTERPRISES LLC</span>
+        <span className="eyebrow red">LANZA REALTY GROUP</span>
         <h1>{document.title}</h1>
         <p className="legal-date">Last updated: {document.updated}</p>
         <p className="legal-intro">{document.intro}</p>

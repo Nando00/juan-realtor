@@ -18,7 +18,8 @@ export type IconName =
   | "home"
   | "key"
   | "star"
-  | "plus";
+  | "plus"
+  | "clock";
 
 export function Icon({
   name,
@@ -32,6 +33,12 @@ export function Icon({
   style?: CSSProperties;
 }) {
   const paths: Record<IconName, React.ReactNode> = {
+    clock: (
+      <>
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 7v5l3 2" />
+      </>
+    ),
     arrow: (
       <>
         <path d="M4 12h16M14 6l6 6-6 6" />

@@ -1,6 +1,6 @@
-# Lanza Enterprises LLC
+# Lanza Realty Group
 
-A single-page, Houston-based real estate website built with Next.js App Router, React, and TypeScript. Warm ivory, red, and charcoal styling, responsive layouts, and locally served photography.
+A Houston-based real estate website and journal built with Next.js App Router, React, and TypeScript. Warm ivory, red, and charcoal styling, responsive layouts, and locally served photography.
 
 ## Run locally
 
@@ -13,6 +13,8 @@ Open http://localhost:3000. To validate a production build, run `npm run build`;
 
 ## Features
 
+- A Markdown-powered blog at `/blog`, with article pages, automatic pagination, reading times, social metadata, and a sitemap. See [the authoring guide](content/blog/README.md) to add posts.
+- Shared home/blog navigation, footer, and contact sections using the existing Lanza design tokens.
 - A photo collection accessible from the hero, using all 13 supplied photographs.
 - A streamlined page without property listings, fictional prices, search, sale/rental controls, or saved homes.
 - Houston Heights, Montrose, Memorial, and Oak Forest neighborhood content.
@@ -25,7 +27,7 @@ Open http://localhost:3000. To validate a production build, run `npm run build`;
 
 ## Content and production setup
 
-This is a Houston-based website concept. The site is branded for Lanza Enterprises LLC. Supplied photographs are illustrative and have not been verified as depicting the named neighborhoods. The photo collection does not represent available inventory.
+This is a Houston-based website concept. The site is branded for Lanza Realty Group. Supplied photographs are illustrative and have not been verified as depicting the named neighborhoods. The photo collection does not represent available inventory.
 
 All 13 supplied JPEG photographs (`IMG_1184.JPEG` through `IMG_1196.JPEG`) are copied from the parent directory into `public/images` and used in the photo collection. Their original files remain unchanged in the parent directory. The website serves the copies locally from `/images/`.
 

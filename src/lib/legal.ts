@@ -17,7 +17,7 @@ export const legalContent: Record<LegalPageId, LegalDocument> = {
     title: "Privacy Policy",
     updated: "October 18, 2026",
     intro:
-      "Your next move should start with clarity. This policy describes how the Lanza Enterprises LLC website collects, uses, and protects your information.",
+      "Your next move should start with clarity. This policy describes how the Lanza Realty Group website collects, uses, and protects your information.",
     sections: [
       {
         heading: "SMS & Mobile Information Privacy",
@@ -28,14 +28,14 @@ export const legalContent: Record<LegalPageId, LegalDocument> = {
       {
         heading: "How to contact us",
         paragraphs: [
-          "Contact Lanza Enterprises LLC at juan@lanzacorporation.com or (832) 379-0358 for business inquiries, messaging support, or privacy questions.",
+          "Contact Lanza Realty Group at juan@lanzacorporation.com or (832) 379-0358 for business inquiries, messaging support, or privacy questions.",
           "The LeadConnector chat widget is the only form on this website. The email and phone links open your email or calling application; using those links does not provide SMS marketing consent. This site does not provide user accounts or payment processing.",
         ],
       },
       {
         heading: "LeadConnector chat and SMS opt-in",
         paragraphs: [
-          "This site embeds a LeadConnector widget for Lanza Enterprises LLC. Information you submit through the widget, such as your name, phone number, message, consent selections, and any additional fields shown in the widget, is processed by LeadConnector to handle your inquiry and requested communications. Review the consent wording displayed in the widget before submitting.",
+          "This site embeds a LeadConnector widget for Lanza Realty Group. Information you submit through the widget, such as your name, phone number, message, consent selections, and any additional fields shown in the widget, is processed by LeadConnector to handle your inquiry and requested communications. Review the consent wording displayed in the widget before submitting.",
           "The widget loads resources from LeadConnector and may process technical information, such as your IP address and browser details, and use browser storage as part of its operation. The provider manages widget submissions and consent records.",
         ],
       },
@@ -72,12 +72,12 @@ export const legalContent: Record<LegalPageId, LegalDocument> = {
     title: "Terms & Conditions",
     updated: "October 18, 2026",
     intro:
-      "These terms explain the intended use and limitations of the Lanza Enterprises LLC website (https://www.lanzacorporation.com). Please read them alongside our Privacy Policy.",
+      "These terms explain the intended use and limitations of the Lanza Realty Group website (https://www.lanzacorporation.com). Please read them alongside our Privacy Policy.",
     sections: [
       {
         heading: "A place to explore",
         paragraphs: [
-          "This site provides general real estate and neighborhood information for the Greater Houston area. Website content is for informational purposes only and does not constitute a binding offer to sell, lease, or finance any specific property. Confirm current property, location, and transaction information directly with Lanza Enterprises LLC before making a real estate decision.",
+          "This site provides general real estate and neighborhood information for the Greater Houston area. Website content is for informational purposes only and does not constitute a binding offer to sell, lease, or finance any specific property. Confirm current property, location, and transaction information directly with Lanza Realty Group before making a real estate decision.",
         ],
       },
       {
@@ -90,7 +90,7 @@ export const legalContent: Record<LegalPageId, LegalDocument> = {
       {
         heading: "SMS Messaging Terms of Service",
         paragraphs: [
-          "1. Program Description: By opting into Lanza Enterprises LLC SMS services through our website chat widget, you consent to receive text messages regarding real estate inquiries, property updates, appointment reminders, and promotional offers from Lanza Enterprises LLC.",
+          "1. Program Description: By opting into Lanza Realty Group SMS services through our website chat widget, you consent to receive text messages regarding real estate inquiries, property updates, appointment reminders, and promotional offers from Lanza Realty Group.",
           '2. Opt-Out Instructions: You can cancel the SMS service at any time. Just text "STOP" to the phone number. After you send the SMS message "STOP" to us, we will send you an SMS message to confirm that you have been unsubscribed. After this, you will no longer receive SMS messages from us. If you want to join again, just sign up as you did the first time and we will start sending SMS messages to you again.',
           "3. Help & Support: If you are experiencing issues with the messaging program you can reply with the keyword HELP for more assistance, or you can get help directly at juan@lanzacorporation.com or (832) 379-0358.",
           "4. Carrier Liability & Rates: Carriers are not liable for delayed or undelivered messages. As always, message and data rates may apply for any messages sent to you from us and to us from you. Message frequency varies. If you have any questions about your text plan or data plan, it is best to contact your wireless provider.",
@@ -119,14 +119,14 @@ export const legalContent: Record<LegalPageId, LegalDocument> = {
       {
         heading: "Availability and limitations",
         paragraphs: [
-          'We strive to keep the website accurate and accessible, but the site is provided on an "as-is" basis without warranties of continuous availability. To the extent permitted by applicable law, Lanza Enterprises LLC is not liable for damages arising from temporary interruptions or reliance on general informational content.',
+          'We strive to keep the website accurate and accessible, but the site is provided on an "as-is" basis without warranties of continuous availability. To the extent permitted by applicable law, Lanza Realty Group is not liable for damages arising from temporary interruptions or reliance on general informational content.',
         ],
       },
       {
         heading: "Changes and contact information",
         paragraphs: [
           "We may update these Terms & Conditions as our services evolve. The date at the top of this page identifies the current version.",
-          "For questions about these terms or messaging support, contact Lanza Enterprises LLC at juan@lanzacorporation.com or (832) 379-0358.",
+          "For questions about these terms or messaging support, contact Lanza Realty Group at juan@lanzacorporation.com or (832) 379-0358.",
         ],
       },
     ],

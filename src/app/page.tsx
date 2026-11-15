@@ -5,6 +5,9 @@ import { Icon } from "@/components/icons";
 import { Modal } from "@/components/modal";
 import { PhotoGallery } from "@/components/photo-gallery";
 import { homePhotos } from "@/lib/photos";
+import { ContactBanner, ContactDetails } from "@/components/contact";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 
 const neighborhoods = [
   {
@@ -27,123 +30,17 @@ const neighborhoods = [
   },
 ];
 
-function Brand({ light = false }: { light?: boolean }) {
-  return (
-    <a
-      href="#home"
-      className={`brand ${light ? "brand-light" : ""}`}
-      aria-label="Lanza Enterprises LLC home"
-    >
-      <span className="brand-wordmark">
-        <span className="brand-name">
-          LANZA<span>.</span>
-        </span>
-        <span className="brand-business">ENTERPRISES LLC</span>
-      </span>
-      <span className="brand-rule" />
-      <span className="brand-caption">
-        HOUSTON,
-        <br />
-        TEXAS
-      </span>
-    </a>
-  );
-}
-
-function BusinessContactLinks() {
-  return (
-    <address className="business-contact-links">
-      <a className="contact-detail-row" href="mailto:juan@lanzacorporation.com">
-        <span className="contact-detail-icon">
-          <Icon name="mail" size={19} />
-        </span>
-        <span className="contact-detail-text">
-          <span className="contact-detail-label">Email us</span>
-          <span className="contact-detail-value">
-            juan@lanzacorporation.com
-          </span>
-        </span>
-        <Icon name="arrow-up" size={16} className="contact-detail-arrow" />
-      </a>
-      <a className="contact-detail-row" href="tel:+18323790358">
-        <span className="contact-detail-icon">
-          <Icon name="phone" size={19} />
-        </span>
-        <span className="contact-detail-text">
-          <span className="contact-detail-label">Give us a call</span>
-          <span className="contact-detail-value">(832) 379-0358</span>
-        </span>
-        <Icon name="arrow-up" size={16} className="contact-detail-arrow" />
-      </a>
-    </address>
-  );
-}
-
-function ContactDetails() {
-  return (
-    <div className="contact-dialog">
-      <span className="eyebrow red">LANZA ENTERPRISES LLC</span>
-      <h2>
-        Let’s talk about <em>home.</em>
-      </h2>
-      <p className="dialog-intro">
-        Call or email us about your next move, or use the chat widget to get in
-        touch.
-      </p>
-      <BusinessContactLinks />
-    </div>
-  );
-}
-
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [galleryOpen, setGalleryOpen] = useState(false);
   const [contactOpen, setContactOpen] = useState(false);
   function openContact() {
-    setMenuOpen(false);
     setGalleryOpen(false);
     setContactOpen(true);
   }
 
   return (
     <>
-      <a className="skip-link" href="#main">
-        Skip to content
-      </a>
-      <header className="site-header" id="home">
-        <div className="header-inner">
-          <Brand />
-          <nav
-            aria-label="Main navigation"
-            className={`main-nav ${menuOpen ? "is-open" : ""}`}
-          >
-            <button onClick={() => openContact()}>Buy with us</button>
-            <button onClick={() => openContact()}>Sell with us</button>
-            <a href="#neighborhoods" onClick={() => setMenuOpen(false)}>
-              Neighborhoods
-            </a>
-            <a href="#about" onClick={() => setMenuOpen(false)}>
-              About us
-            </a>
-          </nav>
-          <div className="header-actions">
-            <button
-              className="button button-black header-cta"
-              onClick={() => openContact()}
-            >
-              Let’s talk <Icon name="arrow-up" size={17} />
-            </button>
-            <button
-              className="icon-button menu-toggle"
-              aria-label={menuOpen ? "Close menu" : "Open menu"}
-              aria-expanded={menuOpen}
-              onClick={() => setMenuOpen(!menuOpen)}
-            >
-              <Icon name={menuOpen ? "close" : "menu"} />
-            </button>
-          </div>
-        </div>
-      </header>
+      <SiteHeader onContact={openContact} />
 
       <main id="main">
         <section className="hero hero-collage" aria-labelledby="hero-title">
@@ -290,7 +187,7 @@ export default function Home() {
                 <em>A little more personal.</em>
               </h2>
               <p className="about-lead">
-                At Lanza Enterprises LLC, we believe finding a home should feel
+                At Lanza Realty Group, we believe finding a home should feel
                 as good as coming home.
               </p>
               <p>
@@ -304,7 +201,7 @@ export default function Home() {
                 corner.
               </p>
               <div className="about-signoff">
-                <span className="signature">Lanza.</span>
+                <span className="signature">LRG.</span>
                 <span>
                   YOUR NEXT CHAPTER
                   <br />
@@ -415,64 +312,10 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="contact-banner">
-          <div className="container contact-banner-inner">
-            <div>
-              <span className="eyebrow">YOUR NEXT CHAPTER IS OUT THERE.</span>
-              <h2>
-                Let’s find it. <em>Together.</em>
-              </h2>
-              <p>A fresh start begins with a simple conversation.</p>
-            </div>
-            <div className="contact-banner-details">
-              <div className="contact-card-heading">
-                <h3>Get in touch.</h3>
-                <span>LANZA ENTERPRISES LLC</span>
-              </div>
-              <BusinessContactLinks />
-            </div>
-            <span className="banner-mark" aria-hidden="true">
-              L.
-            </span>
-          </div>
-        </section>
+        <ContactBanner />
       </main>
 
-      <footer className="site-footer">
-        <div className="container">
-          <div className="footer-top">
-            <div className="footer-brand-column">
-              <Brand light />
-              <p>Houston roots. New beginnings.</p>
-              <a className="footer-top-link" href="#home">
-                BACK TO TOP <Icon name="arrow-up" size={17} />
-              </a>
-            </div>
-            <div className="footer-contact-column">
-              <h3 className="footer-column-label">LET’S CONNECT</h3>
-              <BusinessContactLinks />
-            </div>
-            <nav aria-label="Footer navigation">
-              <h3 className="footer-column-label">EXPLORE</h3>
-              <button onClick={() => openContact()}>Buy with us</button>
-              <button onClick={() => openContact()}>Sell with us</button>
-              <a href="#neighborhoods">Neighborhoods</a>
-              <a href="#about">About us</a>
-            </nav>
-          </div>
-          <div className="footer-bottom">
-            <span>© {new Date().getFullYear()} Lanza Enterprises LLC</span>
-            <div className="footer-legal">
-              <a href="/privacy-policy">Privacy Policy</a>
-              <a href="/terms-and-conditions">Terms & Conditions</a>
-            </div>
-            <span className="footer-note">
-              <Icon name="home" size={15} />
-              Houston, Texas
-            </span>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter />
 
       {galleryOpen && (
         <Modal
